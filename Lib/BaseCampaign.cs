@@ -12,9 +12,12 @@ internal sealed class Clock : IClock
 	public DateTime UtcNow { get => DateTime.UtcNow; }
 }
 
+// Draft => Started => Finished
+
 internal abstract class BaseCampaign
 {
 	public KeyType Id { get; set; } = KeyType.NewGuid();
+
 	public string Name { get; set; } = "";
 }
 
@@ -61,5 +64,32 @@ internal class Orchestrator : IOrchestrator
 		},
 		
 		_ => throw new NotSupportedException(),
+	};
+}
+
+internal interface IOrchestrator2
+{
+	StartedCampaing PushState(DraftCampaing draftCampaing);
+	FinishedCampaign PushState(StartedCampaing startedCampaing);
+}
+
+internal sealed class Orchestrator2 : IOrchestrator2
+{
+	private readonly IClock clock;
+	public Orchestrator2(IClock clock) => this.clock = clock;
+
+	public StartedCampaing PushState(DraftCampaing draftCampaing) => new()
+	{
+		Id = draftCampaing.Id,
+		Name = draftCampaing.Name,
+		StartMoment = clock.UtcNow
+	};
+
+	public FinishedCampaign PushState(StartedCampaing startedCampaing) => new()
+	{
+		Id = startedCampaing.Id,
+		Name = startedCampaing.Name,
+		StartMoment = startedCampaing.StartMoment,
+		FinishMoment = clock.UtcNow
 	};
 }
