@@ -1,6 +1,15 @@
-﻿global using KeyType = System.Guid;
+﻿//global using KeyType = System.Guid;
 
 namespace Lib;
+
+internal sealed class KeyType
+{
+	public Guid Value { get; set; } = Guid.NewGuid();
+
+	public override string ToString() => Value.ToString();
+
+	public string OtherFriendlyForm() => ".....";
+}
 
 internal interface IClock
 {
@@ -16,7 +25,7 @@ internal sealed class Clock : IClock
 
 internal abstract class BaseCampaign
 {
-	public KeyType Id { get; set; } = KeyType.NewGuid();
+	public KeyType Id { get; set; } = new();
 
 	public string Name { get; set; } = "";
 }
