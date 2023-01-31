@@ -1,39 +1,38 @@
-﻿namespace Console
+﻿namespace Console;
+
+internal sealed class Logic : ILogic
 {
-	internal class Logic : ILogic
+	#region ctor
+	private readonly ILogger logger;
+	private readonly AppSettings appSettings;
+	public Logic(ILogger<Logic> logger, IOptions<AppSettings> options)
 	{
-		#region ctor
-		private readonly ILogger logger;
-		private readonly AppSettings appSettings;
-		public Logic(ILogger<Logic> logger, IOptions<AppSettings> options)
-		{
-			this.logger = logger;
-			this.appSettings = options.Value;
+		this.logger = logger;
+		this.appSettings = options.Value;
 
 #if DEBUG
 
-		LogEveryLevelToSeeColors(logger);
+	LogEveryLevelToSeeColors(logger);
 
-		static void LogEveryLevelToSeeColors(ILogger logger)
-		{
-			logger.LogTrace("TRACE");
-			logger.LogDebug("DEBUG");
-			logger.LogInformation("INFORMATION");
-			logger.LogWarning("WARNING");
-			logger.LogError("ERROR");
-			logger.LogCritical("CRITICAL");
-		}
+	static void LogEveryLevelToSeeColors(ILogger logger)
+	{
+		logger.LogTrace("TRACE");
+		logger.LogDebug("DEBUG");
+		logger.LogInformation("INFORMATION");
+		logger.LogWarning("WARNING");
+		logger.LogError("ERROR");
+		logger.LogCritical("CRITICAL");
+	}
 
 #endif
 
-		}
-		#endregion
+	}
+	#endregion
 
-		public Task RunAsync(CancellationToken cancellationToken)
-		{
-			logger.LogInformation("AppVersion {appVersion}, VS template version {vsTemplateVersion}", appSettings.Version, appSettings.VisualStudioTemplateVersion);
+	public Task RunAsync(CancellationToken cancellationToken)
+	{
+		logger.LogInformation("AppVersion {appVersion}, VS template version {vsTemplateVersion}", appSettings.Version, appSettings.VisualStudioTemplateVersion);
 
-			return Task.CompletedTask;
-		}
+		return Task.CompletedTask;
 	}
 }

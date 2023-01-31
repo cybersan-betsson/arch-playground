@@ -1,12 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿namespace Lib;
 
-namespace Lib.Clocks
+internal interface IClock
 {
-	internal class IClock
-	{
-	}
+	DateTime UtcNow { get; }
 }

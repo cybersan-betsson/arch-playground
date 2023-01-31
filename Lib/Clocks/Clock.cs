@@ -1,12 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿namespace Lib;
 
-namespace Lib.Clocks
+internal sealed class Clock : IClock
 {
-	internal class Clock
-	{
-	}
+	public DateTime UtcNow => DateTime.UtcNow;
 }

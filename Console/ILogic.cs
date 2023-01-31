@@ -1,7 +1,6 @@
-﻿namespace Console
+﻿namespace Console;
+
+internal interface ILogic
 {
-	internal interface ILogic
-	{
-		Task RunAsync(CancellationToken cancellationToken);
-	}
+	Task RunAsync(CancellationToken cancellationToken);
 }

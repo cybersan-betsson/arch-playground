@@ -1,12 +1,26 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿namespace Lib;
 
-namespace Lib.Campaigns
+internal sealed class CampaignService : ICampaignService
 {
-	internal class CampaignService
+	public Campaign CreateCampaign(string name, IBrand brand) => new()
 	{
+		Id = new KeyType(),
+		Name = name,
+		Status = CampaignStatus.PreDraft,
+		SegmentSet = new SegmentSet(),
+		Brand = brand
+	};
+
+	public void ChangeState(Campaign campaign, CampaignStatus status)
+	{
+		if (campaign.Status == CampaignStatus.PreDraft && status == CampaignStatus.Draft
+			// ...
+			|| campaign.Status == CampaignStatus.Draft && status == CampaignStatus.AwaitingApproval)
+		{
+		}
+		else
+		{
+			throw new CampaignChangeStatusException(campaign, status);
+		}
 	}
 }

@@ -1,11 +1,10 @@
-﻿namespace Console
+﻿namespace Console;
+
+internal static class Const
 {
-	internal static class Const
-	{
-		internal const string ENVIRONMENTAL_VARIABLES_PREFIX = "SYGENIC_";
+	internal const string ENVIRONMENTAL_VARIABLES_PREFIX = "SYGENIC_";
 
-		#region nameof
+	#region nameof
 
-		#endregion
-	}
+	#endregion
 }

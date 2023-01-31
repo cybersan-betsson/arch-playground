@@ -23,14 +23,14 @@ internal sealed class Clock : IClock
 
 // Draft => Started => Finished
 
-internal abstract class BaseCampaign
+internal abstract class _examples_
 {
 	public KeyType Id { get; set; } = new();
 
 	public string Name { get; set; } = "";
 }
 
-internal class DraftCampaing : BaseCampaign
+internal class DraftCampaing : _examples_
 {
 
 }
@@ -47,7 +47,7 @@ internal sealed class FinishedCampaign : StartedCampaing
 
 internal interface IOrchestrator
 {
-	T PushState<T>(BaseCampaign baseCampaign);
+	T PushState<T>(_examples_ baseCampaign);
 }
 
 internal class Orchestrator : IOrchestrator
@@ -55,7 +55,7 @@ internal class Orchestrator : IOrchestrator
 	private readonly IClock clock;
 	public Orchestrator(IClock clock) => this.clock = clock;
 
-	public T PushState<T>(BaseCampaign oldStateCampaign) => oldStateCampaign switch
+	public T PushState<T>(_examples_ oldStateCampaign) => oldStateCampaign switch
 	{
 		StartedCampaing startedCampaing => (T)(object)new FinishedCampaign()
 		{
