@@ -1,4 +1,4 @@
-﻿namespace Lib
+﻿namespace Console
 {
 	internal interface ILogic
 	{

@@ -1,4 +1,4 @@
-﻿namespace Lib
+﻿namespace Console
 {
 	internal sealed class Program
 	{
@@ -12,7 +12,7 @@
 			}
 			catch (Exception ex)
 			{
-				Console.Error.WriteLine($"General error during Main: {ex}");
+				System.Console.Error.WriteLine($"General error during Main: {ex}");
 				return (int)ErrorCode.GeneralError;
 			}
 		}
@@ -61,7 +61,7 @@
 			}
 			catch (TaskCanceledException)
 			{
-				Console.WriteLine($"TaskCanceledException (Ctrl-C maybe), no proper software finish, error code {(int)ErrorCode.TaskCancelled} (ErrorCode.TaskCancelled)");
+				System.Console.WriteLine($"TaskCanceledException (Ctrl-C maybe), no proper software finish, error code {(int)ErrorCode.TaskCancelled} (ErrorCode.TaskCancelled)");
 				return ErrorCode.TaskCancelled;
 			}
 		}

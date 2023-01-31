@@ -1,6 +1,6 @@
 ﻿//global using KeyType = System.Guid;
 
-namespace Lib;
+namespace Console;
 
 internal sealed class KeyType
 {
@@ -79,6 +79,7 @@ internal class Orchestrator : IOrchestrator
 internal interface IOrchestrator2
 {
 	StartedCampaing PushState(DraftCampaing draftCampaing);
+
 	FinishedCampaign PushState(StartedCampaing startedCampaing);
 }
 

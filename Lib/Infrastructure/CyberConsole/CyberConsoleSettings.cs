@@ -1,4 +1,4 @@
-﻿namespace Lib
+﻿namespace Console
 {
 	public sealed class CyberConsoleSettings : ConsoleFormatterOptions
 	{
