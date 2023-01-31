@@ -8,7 +8,8 @@ internal sealed class CampaignService : ICampaignService
 		Name = name,
 		Status = CampaignStatus.PreDraft,
 		SegmentSet = new SegmentSet(),
-		Brand = brand
+		Brand = brand,
+		CommunicationSet = new CommunicationSet(),
 	};
 
 	public void ChangeState(Campaign campaign, CampaignStatus status)
