@@ -1,5 +1,5 @@
 ﻿namespace Lib;
 
-internal interface ICommunicationSet
+internal interface ICommunicationSet : IBetflixSet<Communication>
 {
 }
