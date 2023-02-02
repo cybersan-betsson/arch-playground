@@ -1,6 +1,6 @@
-﻿namespace Lib;
+﻿namespace Domain;
 
-internal interface IBetflixSet<T>
+public interface IBetflixSet<T>
 {
 	void Add(T item);
 	void Remove(T item);

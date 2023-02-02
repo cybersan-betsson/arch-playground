@@ -1,6 +1,6 @@
-﻿namespace Lib;
+﻿namespace Domain;
 
-internal sealed class KeyType
+public sealed class KeyType
 {
 	private Guid Value { get; set; } = Guid.NewGuid();
 

@@ -1,8 +1,8 @@
-﻿namespace Lib;
+﻿namespace Domain;
 
-internal sealed class Brand
+public interface Brand
 {
-	public required KeyType Id { get; init; }
-	public required string Name { get; init; }
-	public required string Code { get; init; }
+	KeyType Id { get; init; }
+	string Name { get; init; }
+	string Code { get; init; }
 }

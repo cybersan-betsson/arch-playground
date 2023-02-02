@@ -1,5 +1,5 @@
-﻿namespace Lib;
+﻿namespace Domain;
 
-internal sealed class Communication
+public sealed class Communication
 {
 }

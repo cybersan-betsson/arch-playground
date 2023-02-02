@@ -1,4 +1,4 @@
-﻿namespace Lib;
+﻿namespace Domain;
 
 internal interface IClock
 {

@@ -1,6 +1,5 @@
-﻿namespace Lib
+﻿namespace Domain;
+
+public class Customer
 {
-	internal class Customer
-	{
-	}
 }

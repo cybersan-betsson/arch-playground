@@ -1,4 +1,4 @@
-﻿namespace Lib;
+﻿namespace Domain;
 
 [Serializable]
 internal class CampaignException : Exception

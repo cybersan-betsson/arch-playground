@@ -1,4 +1,4 @@
-﻿namespace Lib;
+﻿namespace Domain;
 
 [Serializable]
 internal class CampaignChangeStatusException : Exception
@@ -14,7 +14,8 @@ internal class CampaignChangeStatusException : Exception
 	{
 	}
 
-	public CampaignChangeStatusException(Campaign campaign, CampaignStatus status) : this($"Wrong status transition for campaign {campaign.Id} from {campaign.Status} to {status}")
+	public CampaignChangeStatusException(Campaign campaign, CampaignStatus status) 
+		: this($"Wrong status transition for campaign {campaign.Id} from {campaign.Status} to {status}")
 	{
 		this.campaign = campaign;
 		this.status = status;

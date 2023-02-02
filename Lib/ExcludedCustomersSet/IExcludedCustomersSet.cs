@@ -1,5 +1,5 @@
-﻿namespace Lib;
+﻿namespace Domain;
 
-internal interface IExcludedCustomersSet : IBetflixSet<Customer>
+public interface IExcludedCustomersSet : IBetflixSet<Customer>
 {
 }

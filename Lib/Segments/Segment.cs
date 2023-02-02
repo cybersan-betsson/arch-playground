@@ -1,5 +1,5 @@
-﻿namespace Lib;
+﻿namespace Domain;
 
-internal sealed class Segment
+public sealed class Segment
 {
 }

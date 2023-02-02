@@ -1,6 +1,6 @@
-﻿namespace Lib;
+﻿namespace Domain;
 
-internal enum CampaignStatus
+public enum CampaignStatus
 {
 	Unknown = 0,
 	PreDraft = 1,

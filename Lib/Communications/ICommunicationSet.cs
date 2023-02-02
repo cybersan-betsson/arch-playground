@@ -1,5 +1,5 @@
-﻿namespace Lib;
+﻿namespace Domain;
 
-internal interface ICommunicationSet : IBetflixSet<Communication>
+public interface ICommunicationSet : IBetflixSet<Communication>
 {
 }

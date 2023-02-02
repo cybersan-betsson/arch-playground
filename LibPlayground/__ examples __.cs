@@ -29,17 +29,9 @@ internal class LoggingService : ISomeService
 
 	public void SomeMethod()
 	{
-		DoSomethingBefore();
+		// DoSomethingBefore();
 		someService.SomeMethod();
-		DoSomethingAfter();
-	}
-
-	private void DoSomethingBefore()
-	{
-	}
-
-	private void DoSomethingAfter()
-	{
+		// DoSomethingAfter();
 	}
 }
 
